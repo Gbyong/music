@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
     // 音乐数据
     // 模拟假的音乐数据，随后再用真实的数据替换
     var data = localStorage.getItem('mList') ?
@@ -109,11 +109,13 @@
     // 选中播放列表中播放的歌曲
     function checkPlayList() {
         var lis = document.querySelectorAll('.play-list ul li');
-        // 先干掉所有其他的 再给自己添加
-        for(var i = 0; i < lis.length; i++){
-            lis[i].className = '';
+	if(lis.length){
+            // 先干掉所有其他的 再给自己添加
+            for(var i = 0; i < lis.length; i++){
+                lis[i].className = '';
+            }
+            lis[index].className = 'active';
         }
-        lis[index].className = 'active';
     }
 
     // 格式化音乐格式
